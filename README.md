@@ -173,7 +173,7 @@ Use these to sanity-check your system during development:
 - If your solution uses external APIs (e.g., OpenAI), document this and include example outputs so we can evaluate without running it
 
 ### 2. Report
-Follow the template in `REPORT_TEMPLATE.md`. **This is as important as the code.**
+Follow the template in `REPORT.md`. **This is as important as the code.**
 
 We weight the report equally with the code. A mediocre system with excellent analysis beats a good system with a shallow report.
 
