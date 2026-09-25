@@ -1,0 +1,12 @@
+**/__pycache__
+**/*.py[cod]
+*.log
+.git
+.venv
+artifacts
+scripts
+tests
+docs
+*.md
+Dockerfile
+compose.yaml

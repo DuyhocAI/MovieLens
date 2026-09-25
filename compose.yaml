@@ -1,0 +1,10 @@
+services:
+  movie-assistant:
+    build: .
+    image: movie-assistant:1.0.0
+    ports:
+      - "8765:8765"
+    environment:
+      # Comma-separated browser origins allowed to call the API, or "*".
+      MOVIE_ASSISTANT_CORS_ORIGINS: ""
+    restart: unless-stopped

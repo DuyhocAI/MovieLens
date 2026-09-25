@@ -1,0 +1,496 @@
+{
+  "scope": "Developer-authored synthetic intent probes, not a human relevance benchmark.",
+  "k": 3,
+  "catalog_size": 10,
+  "probe_count": 19,
+  "legacy": {
+    "passed": 8,
+    "cases": [
+      {
+        "query": "phim chữa lành không hoạt hình",
+        "top_ids": [
+          4
+        ],
+        "expected_any": [
+          1
+        ],
+        "forbidden_ids": [
+          4
+        ],
+        "pass": false
+      },
+      {
+        "query": "feel good without animation",
+        "top_ids": [
+          4
+        ],
+        "expected_any": [
+          1
+        ],
+        "forbidden_ids": [
+          4
+        ],
+        "pass": false
+      },
+      {
+        "query": "người ngoài hành tinh",
+        "top_ids": [],
+        "expected_any": [
+          2
+        ],
+        "forbidden_ids": [],
+        "pass": false
+      },
+      {
+        "query": "alien invasion",
+        "top_ids": [
+          2
+        ],
+        "expected_any": [
+          2
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "phim sinh tồn",
+        "top_ids": [],
+        "expected_any": [
+          5
+        ],
+        "forbidden_ids": [],
+        "pass": false
+      },
+      {
+        "query": "survival",
+        "top_ids": [
+          5
+        ],
+        "expected_any": [
+          5
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "du hành thời gian",
+        "top_ids": [],
+        "expected_any": [
+          9
+        ],
+        "forbidden_ids": [],
+        "pass": false
+      },
+      {
+        "query": "time travel",
+        "top_ids": [
+          9
+        ],
+        "expected_any": [
+          9
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "phim tình cảm kết thúc buồn",
+        "top_ids": [],
+        "expected_any": [
+          6
+        ],
+        "forbidden_ids": [],
+        "pass": false
+      },
+      {
+        "query": "romance sad ending",
+        "top_ids": [
+          6,
+          10
+        ],
+        "expected_any": [
+          6
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "giật gân tâm lý",
+        "top_ids": [
+          3
+        ],
+        "expected_any": [
+          3
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "psychological thriller",
+        "top_ids": [
+          3
+        ],
+        "expected_any": [
+          3
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "hành động không kinh dị",
+        "top_ids": [
+          7,
+          8,
+          2
+        ],
+        "expected_any": [
+          2,
+          8
+        ],
+        "forbidden_ids": [
+          7
+        ],
+        "pass": false
+      },
+      {
+        "query": "action no horror",
+        "top_ids": [
+          7,
+          8,
+          2
+        ],
+        "expected_any": [
+          2,
+          8
+        ],
+        "forbidden_ids": [
+          7
+        ],
+        "pass": false
+      },
+      {
+        "query": "animation",
+        "top_ids": [
+          4
+        ],
+        "expected_any": [
+          4
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "xyzunmatchedtoken",
+        "top_ids": [],
+        "expected_any": [],
+        "forbidden_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "pass": true
+      },
+      {
+        "query": "I don't want horror, give me action",
+        "top_ids": [
+          7,
+          8,
+          2
+        ],
+        "expected_any": [
+          2,
+          8
+        ],
+        "forbidden_ids": [
+          7
+        ],
+        "pass": false
+      },
+      {
+        "query": "I hate horror, action please",
+        "top_ids": [
+          7,
+          8,
+          2
+        ],
+        "expected_any": [
+          2,
+          8
+        ],
+        "forbidden_ids": [
+          7
+        ],
+        "pass": false
+      },
+      {
+        "query": "action but not a fan of horror",
+        "top_ids": [
+          7,
+          8,
+          2
+        ],
+        "expected_any": [
+          2,
+          8
+        ],
+        "forbidden_ids": [
+          7
+        ],
+        "pass": false
+      }
+    ]
+  },
+  "expanded": {
+    "passed": 19,
+    "cases": [
+      {
+        "query": "phim chữa lành không hoạt hình",
+        "top_ids": [
+          1
+        ],
+        "expected_any": [
+          1
+        ],
+        "forbidden_ids": [
+          4
+        ],
+        "pass": true
+      },
+      {
+        "query": "feel good without animation",
+        "top_ids": [
+          1
+        ],
+        "expected_any": [
+          1
+        ],
+        "forbidden_ids": [
+          4
+        ],
+        "pass": true
+      },
+      {
+        "query": "người ngoài hành tinh",
+        "top_ids": [
+          2
+        ],
+        "expected_any": [
+          2
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "alien invasion",
+        "top_ids": [
+          2
+        ],
+        "expected_any": [
+          2
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "phim sinh tồn",
+        "top_ids": [
+          5
+        ],
+        "expected_any": [
+          5
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "survival",
+        "top_ids": [
+          5
+        ],
+        "expected_any": [
+          5
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "du hành thời gian",
+        "top_ids": [
+          9
+        ],
+        "expected_any": [
+          9
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "time travel",
+        "top_ids": [
+          9
+        ],
+        "expected_any": [
+          9
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "phim tình cảm kết thúc buồn",
+        "top_ids": [
+          6,
+          10
+        ],
+        "expected_any": [
+          6
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "romance sad ending",
+        "top_ids": [
+          6,
+          10
+        ],
+        "expected_any": [
+          6
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "giật gân tâm lý",
+        "top_ids": [
+          3
+        ],
+        "expected_any": [
+          3
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "psychological thriller",
+        "top_ids": [
+          3
+        ],
+        "expected_any": [
+          3
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "hành động không kinh dị",
+        "top_ids": [
+          8,
+          2
+        ],
+        "expected_any": [
+          2,
+          8
+        ],
+        "forbidden_ids": [
+          7
+        ],
+        "pass": true
+      },
+      {
+        "query": "action no horror",
+        "top_ids": [
+          8,
+          2
+        ],
+        "expected_any": [
+          2,
+          8
+        ],
+        "forbidden_ids": [
+          7
+        ],
+        "pass": true
+      },
+      {
+        "query": "animation",
+        "top_ids": [
+          4
+        ],
+        "expected_any": [
+          4
+        ],
+        "forbidden_ids": [],
+        "pass": true
+      },
+      {
+        "query": "xyzunmatchedtoken",
+        "top_ids": [],
+        "expected_any": [],
+        "forbidden_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "pass": true
+      },
+      {
+        "query": "I don't want horror, give me action",
+        "top_ids": [
+          8,
+          2
+        ],
+        "expected_any": [
+          2,
+          8
+        ],
+        "forbidden_ids": [
+          7
+        ],
+        "pass": true
+      },
+      {
+        "query": "I hate horror, action please",
+        "top_ids": [
+          8,
+          2
+        ],
+        "expected_any": [
+          2,
+          8
+        ],
+        "forbidden_ids": [
+          7
+        ],
+        "pass": true
+      },
+      {
+        "query": "action but not a fan of horror",
+        "top_ids": [
+          8,
+          2
+        ],
+        "expected_any": [
+          2,
+          8
+        ],
+        "forbidden_ids": [
+          7
+        ],
+        "pass": true
+      }
+    ]
+  }
+}

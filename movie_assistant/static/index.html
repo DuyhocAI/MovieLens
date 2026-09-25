@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ef">
+  <title>Cuốn Phim — Trợ lý khám phá phim</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Cuốn Phim, trang chủ">
+      <span class="brand-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="brand-name">cuốn<span>phim</span></span>
+    </a>
+    <span class="local-label"><span class="online-dot"></span> MovieLens chạy cục bộ</span>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Chuyển sang giao diện tối">
+      <span id="theme-icon" aria-hidden="true">◐</span><span id="theme-label">Giao diện tối</span>
+    </button>
+    <label class="profile-picker">
+      <span>Hồ sơ</span>
+      <select id="user-select" aria-label="Chọn hồ sơ MovieLens">
+        <option value="1">User 1</option>
+        <option value="15" selected>User 15</option>
+        <option value="30">User 30</option>
+      </select>
+      <span class="select-chevron" aria-hidden="true">⌄</span>
+    </label>
+  </header>
+
+  <main class="layout">
+    <section class="main-column" aria-labelledby="page-title">
+      <div class="intro">
+        <div class="eyebrow"><span class="eyebrow-line"></span> NGƯỜI BẠN CHỌN PHIM CỦA BẠN</div>
+        <h1 id="page-title">Một bộ phim hay<br>đang <em>chờ bạn.</em></h1>
+        <p class="intro-copy">Kể mình nghe bạn muốn xem gì. Mình sẽ tìm trong thư viện phim và giải thích vì sao lựa chọn đó hợp với bạn.</p>
+      </div>
+
+      <section class="conversation" aria-label="Cuộc trò chuyện với trợ lý phim">
+        <div class="conversation-head">
+          <div class="assistant-avatar" aria-hidden="true"><span class="clapper-top"></span><span class="clapper-body">▶</span></div>
+          <div><strong>Cuốn Phim</strong><span class="assistant-caption">Trợ lý khám phá phim</span></div>
+          <button id="clear-chat" class="icon-button" type="button" aria-label="Bắt đầu cuộc trò chuyện mới" title="Cuộc trò chuyện mới">↻</button>
+        </div>
+        <div id="chat-log" class="chat-log" aria-live="polite" aria-relevant="additions text">
+          <div class="welcome-message">
+            <span class="welcome-kicker">XIN CHÀO, USER <span id="welcome-user">15</span></span>
+            <p>Mình đã xem qua gu phim của bạn. Hôm nay ta khám phá gì nhỉ?</p>
+          </div>
+        </div>
+        <div id="typing" class="typing-indicator" hidden><span></span><span></span><span></span><b>Đang tìm phim phù hợp</b></div>
+        <div class="composer-wrap">
+          <div class="suggestions" aria-label="Câu hỏi gợi ý">
+            <button type="button" class="suggestion" data-prompt="Tối nay xem gì?">✳ Gợi ý cho tôi</button>
+            <button type="button" class="suggestion" data-prompt="phim giật gân tâm lý đen tối có cú twist">⌕ Hồi hộp, bất ngờ</button>
+            <button type="button" class="suggestion" data-prompt="What genres have I not explored?">↗ Thể loại mới</button>
+          </div>
+          <form id="chat-form" class="composer">
+            <label class="sr-only" for="message-input">Viết câu hỏi về phim</label>
+            <textarea id="message-input" rows="1" maxlength="2000" placeholder="Mình muốn xem một bộ phim…" required></textarea>
+            <button id="send-button" type="submit" aria-label="Gửi câu hỏi"><span>Gửi</span><b aria-hidden="true">↑</b></button>
+          </form>
+          <div class="composer-note"><span>↳</span> Câu trả lời dựa trên lịch sử rating và dữ liệu phim.</div>
+        </div>
+      </section>
+    </section>
+
+    <aside class="sidebar" aria-label="Thông tin hồ sơ và trợ giúp">
+      <section class="profile-card">
+        <div class="profile-card-top"><span>HỒ SƠ SỞ THÍCH</span><span class="profile-mark">✳</span></div>
+        <div class="profile-id-row"><span class="profile-monogram" id="profile-monogram">15</span><div><strong id="profile-title">Người xem #15</strong><span id="profile-count">85 lượt đánh giá</span></div></div>
+        <div class="profile-divider"></div>
+        <div class="stat-row"><span>Điểm trung bình</span><strong id="profile-average">3.55 <small>/ 5</small></strong></div>
+        <div class="taste-title">Bạn thường chọn</div>
+        <div id="profile-genres" class="genre-chips"><span class="genre-chip muted-chip">Đang tải…</span></div>
+      </section>
+
+      <section class="help-card">
+        <div class="help-card-title"><span class="sparkle">✳</span> Thử hỏi mình</div>
+        <button type="button" class="prompt-link" data-prompt="What do people with similar taste to mine think about Inception?"><span class="prompt-arrow">↗</span><span>Người cùng gu nghĩ gì về Inception?</span></button>
+        <button type="button" class="prompt-link" data-prompt="Why would I like that?"><span class="prompt-arrow">↗</span><span>Vì sao mình sẽ thích phim đó?</span></button>
+        <button type="button" class="prompt-link" data-prompt="Tôi thích Toy Story nhưng muốn xem phim không hoạt hình"><span class="prompt-arrow">↗</span><span>Phim giống Toy Story, nhưng không hoạt hình?</span></button>
+      </section>
+
+      <section class="trust-note">
+        <span class="trust-icon">◉</span>
+        <div><strong>Có dữ liệu làm căn cứ</strong><p>Gợi ý đi kèm thể loại, rating và đánh giá từ những người có gu tương tự.</p></div>
+      </section>
+      <div class="sidebar-foot"><span class="online-dot"></span> Cá nhân hóa từ dữ liệu MovieLens</div>
+    </aside>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,829 @@
+[
+  {
+    "request": {
+      "method": "GET",
+      "path": "/health",
+      "body": null
+    },
+    "status": 200,
+    "response": {
+      "status": "ok",
+      "version": "1.0.0",
+      "movies": 5135,
+      "users": 610,
+      "ratings": 74064
+    }
+  },
+  {
+    "request": {
+      "method": "GET",
+      "path": "/api/v1/users/15",
+      "body": null
+    },
+    "status": 200,
+    "response": {
+      "user_id": 15,
+      "rating_count": 85,
+      "average_rating": 3.547,
+      "favorite_genres": [
+        "Drama",
+        "Sci-Fi",
+        "Adventure"
+      ]
+    }
+  },
+  {
+    "request": {
+      "method": "GET",
+      "path": "/api/v1/users/15/recommendations?limit=3&q=space&exclude_genres=Horror",
+      "body": null
+    },
+    "status": 200,
+    "response": {
+      "user_id": 15,
+      "recommendations": [
+        {
+          "rank": 1,
+          "movie_id": 924,
+          "title": "2001: A Space Odyssey",
+          "year": 1968,
+          "genres": [
+            "Adventure",
+            "Drama",
+            "Sci-Fi"
+          ],
+          "rank_score": 4.3254,
+          "rating_count": 109,
+          "average_rating": 3.894,
+          "explanation": "2001: A Space Odyssey: you rated other Adventure, Drama, Sci-Fi films 4/5 or higher; its plot resembles films you rated highly; matches your request ‘space’; 16 viewers with similar taste rated it 4.01/5 on average (weighted); 109 ratings overall, average 3.89/5. Plot/tag evidence: space: space. 44 viewers rated both this and Aliens (which you liked) 3.5/5 or higher.",
+          "evidence": {
+            "shared_genres": [
+              "Adventure",
+              "Drama",
+              "Sci-Fi"
+            ],
+            "seed_matches": [],
+            "content_signal": "profile",
+            "content_similarity": 0.0371,
+            "query": "space",
+            "query_terms": [
+              {
+                "concept": "space",
+                "terms": [
+                  "space"
+                ]
+              }
+            ],
+            "tone_caveat": false,
+            "neighbors": {
+              "count": 16,
+              "weighted_mean": 4.011
+            },
+            "item_link": {
+              "source_movie_id": 1200,
+              "source_title": "Aliens",
+              "support": 44
+            },
+            "rating_count": 109,
+            "average_rating": 3.894,
+            "low_confidence": false
+          }
+        },
+        {
+          "rank": 2,
+          "movie_id": 1917,
+          "title": "Armageddon",
+          "year": 1998,
+          "genres": [
+            "Action",
+            "Romance",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "rank_score": 4.2939,
+          "rating_count": 92,
+          "average_rating": 3.054,
+          "explanation": "Armageddon: you rated other Action, Romance, Sci-Fi films 4/5 or higher; its plot resembles films you rated highly; matches your request ‘space’; 9 viewers with similar taste rated it 3.15/5 on average (weighted); that is lukewarm, so it ranks mainly on co-liked films and plot similarity; 92 ratings overall, average 3.05/5. Plot/tag evidence: space: space. 27 viewers rated both this and Saving Private Ryan (which you liked) 3.5/5 or higher.",
+          "evidence": {
+            "shared_genres": [
+              "Action",
+              "Romance",
+              "Sci-Fi",
+              "Thriller"
+            ],
+            "seed_matches": [],
+            "content_signal": "profile",
+            "content_similarity": 0.0625,
+            "query": "space",
+            "query_terms": [
+              {
+                "concept": "space",
+                "terms": [
+                  "space"
+                ]
+              }
+            ],
+            "tone_caveat": false,
+            "neighbors": {
+              "count": 9,
+              "weighted_mean": 3.15
+            },
+            "item_link": {
+              "source_movie_id": 2028,
+              "source_title": "Saving Private Ryan",
+              "support": 27
+            },
+            "rating_count": 92,
+            "average_rating": 3.054,
+            "low_confidence": false
+          }
+        },
+        {
+          "rank": 3,
+          "movie_id": 150,
+          "title": "Apollo 13",
+          "year": 1995,
+          "genres": [
+            "Adventure",
+            "Drama",
+            "IMAX"
+          ],
+          "rank_score": 4.2937,
+          "rating_count": 201,
+          "average_rating": 3.846,
+          "explanation": "Apollo 13: you rated other Adventure, Drama, IMAX films 4/5 or higher; its plot resembles films you rated highly; matches your request ‘space’; 31 viewers with similar taste rated it 3.78/5 on average (weighted); 201 ratings overall, average 3.85/5. Plot/tag evidence: space: space. 101 viewers rated both this and Forrest Gump (which you liked) 3.5/5 or higher.",
+          "evidence": {
+            "shared_genres": [
+              "Adventure",
+              "Drama",
+              "IMAX"
+            ],
+            "seed_matches": [],
+            "content_signal": "profile",
+            "content_similarity": 0.0439,
+            "query": "space",
+            "query_terms": [
+              {
+                "concept": "space",
+                "terms": [
+                  "space"
+                ]
+              }
+            ],
+            "tone_caveat": false,
+            "neighbors": {
+              "count": 31,
+              "weighted_mean": 3.778
+            },
+            "item_link": {
+              "source_movie_id": 356,
+              "source_title": "Forrest Gump",
+              "support": 101
+            },
+            "rating_count": 201,
+            "average_rating": 3.846,
+            "low_confidence": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/api/v1/chat",
+      "body": {
+        "user_id": 15,
+        "message": "I don't want horror, give me sci-fi"
+      }
+    },
+    "status": 200,
+    "response": {
+      "intent": "recommend",
+      "language": "en",
+      "answer": "Picks that match your request:\n1. Men in Black (a.k.a. MIB) (1997) — Action, Comedy, Sci-Fi. You rated other Action, Comedy, Sci-Fi films 4/5 or higher; its plot resembles films you rated highly; matches your request ‘I don't want horror, give me sci-fi’; 19 viewers with similar taste rated it 3.42/5 on average (weighted); that is lukewarm, so it ranks mainly on co-liked films and plot similarity; 165 ratings overall, average 3.49/5. Plot/tag evidence: Sci-Fi: sci. 64 viewers rated both this and Star Wars: Episode VI - Return of the Jedi (which you liked) 3.5/5 or higher.\n2. Predator (1987) — Action, Sci-Fi, Thriller. You rated other Action, Sci-Fi, Thriller films 4/5 or higher; its plot resembles films you rated highly; matches your request ‘I don't want horror, give me sci-fi’; 14 viewers with similar taste rated it 3.65/5 on average (weighted); 61 ratings overall, average 3.58/5. Plot/tag evidence: Sci-Fi: sci. 34 viewers rated both this and Aliens (which you liked) 3.5/5 or higher.\n3. Blade Runner (1982) — Action, Sci-Fi, Thriller. You rated other Action, Sci-Fi, Thriller films 4/5 or higher; its plot resembles films you rated highly; matches your request ‘I don't want horror, give me sci-fi’; 18 viewers with similar taste rated it 4.26/5 on average (weighted); 124 ratings overall, average 4.10/5. Plot/tag evidence: Sci-Fi: sci. 60 viewers rated both this and Alien (which you liked) 3.5/5 or higher.\n4. Twelve Monkeys (a.k.a. 12 Monkeys) (1995) — Mystery, Sci-Fi, Thriller. You rated other Mystery, Sci-Fi, Thriller films 4/5 or higher; its plot resembles films you rated highly; matches your request ‘I don't want horror, give me sci-fi’; 28 viewers with similar taste rated it 3.81/5 on average (weighted); 177 ratings overall, average 3.98/5. Plot/tag evidence: Sci-Fi: sci. 84 viewers rated both this and Star Wars: Episode IV - A New Hope (which you liked) 3.5/5 or higher.\n5. Terminator Salvation (2009) — Action, Adventure, Sci-Fi, Thriller. You rated other Action, Adventure, Sci-Fi films 4/5 or higher; its plot resembles films you rated highly; matches your request ‘I don't want horror, give me sci-fi’; 3 viewers with similar taste rated it 3.29/5 on average (weighted); that is lukewarm, so it ranks mainly on co-liked films and plot similarity; 18 ratings overall, average 3.25/5. Plot/tag evidence: Sci-Fi: sci. 4 viewers rated both this and 9 (which you liked) 3.5/5 or higher. That link rests on few viewers.",
+      "headline": "Picks that match your request:",
+      "recommendations": [
+        {
+          "rank": 1,
+          "movie_id": 1580,
+          "title": "Men in Black (a.k.a. MIB)",
+          "year": 1997,
+          "genres": [
+            "Action",
+            "Comedy",
+            "Sci-Fi"
+          ],
+          "rank_score": 4.5556,
+          "rating_count": 165,
+          "average_rating": 3.488,
+          "explanation": "Men in Black (a.k.a. MIB): you rated other Action, Comedy, Sci-Fi films 4/5 or higher; its plot resembles films you rated highly; matches your request ‘I don't want horror, give me sci-fi’; 19 viewers with similar taste rated it 3.42/5 on average (weighted); that is lukewarm, so it ranks mainly on co-liked films and plot similarity; 165 ratings overall, average 3.49/5. Plot/tag evidence: Sci-Fi: sci. 64 viewers rated both this and Star Wars: Episode VI - Return of the Jedi (which you liked) 3.5/5 or higher.",
+          "evidence": {
+            "shared_genres": [
+              "Action",
+              "Comedy",
+              "Sci-Fi"
+            ],
+            "seed_matches": [],
+            "content_signal": "profile",
+            "content_similarity": 0.0304,
+            "query": "I don't want horror, give me sci-fi",
+            "query_terms": [
+              {
+                "concept": "Sci-Fi",
+                "terms": [
+                  "sci"
+                ]
+              }
+            ],
+            "tone_caveat": false,
+            "neighbors": {
+              "count": 19,
+              "weighted_mean": 3.425
+            },
+            "item_link": {
+              "source_movie_id": 1210,
+              "source_title": "Star Wars: Episode VI - Return of the Jedi",
+              "support": 64
+            },
+            "rating_count": 165,
+            "average_rating": 3.488,
+            "low_confidence": false
+          }
+        },
+        {
+          "rank": 2,
+          "movie_id": 3527,
+          "title": "Predator",
+          "year": 1987,
+          "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "rank_score": 4.2682,
+          "rating_count": 61,
+          "average_rating": 3.582,
+          "explanation": "Predator: you rated other Action, Sci-Fi, Thriller films 4/5 or higher; its plot resembles films you rated highly; matches your request ‘I don't want horror, give me sci-fi’; 14 viewers with similar taste rated it 3.65/5 on average (weighted); 61 ratings overall, average 3.58/5. Plot/tag evidence: Sci-Fi: sci. 34 viewers rated both this and Aliens (which you liked) 3.5/5 or higher.",
+          "evidence": {
+            "shared_genres": [
+              "Action",
+              "Sci-Fi",
+              "Thriller"
+            ],
+            "seed_matches": [],
+            "content_signal": "profile",
+            "content_similarity": 0.041,
+            "query": "I don't want horror, give me sci-fi",
+            "query_terms": [
+              {
+                "concept": "Sci-Fi",
+                "terms": [
+                  "sci"
+                ]
+              }
+            ],
+            "tone_caveat": false,
+            "neighbors": {
+              "count": 14,
+              "weighted_mean": 3.65
+            },
+            "item_link": {
+              "source_movie_id": 1200,
+              "source_title": "Aliens",
+              "support": 34
+            },
+            "rating_count": 61,
+            "average_rating": 3.582,
+            "low_confidence": false
+          }
+        },
+        {
+          "rank": 3,
+          "movie_id": 541,
+          "title": "Blade Runner",
+          "year": 1982,
+          "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "rank_score": 4.208,
+          "rating_count": 124,
+          "average_rating": 4.101,
+          "explanation": "Blade Runner: you rated other Action, Sci-Fi, Thriller films 4/5 or higher; its plot resembles films you rated highly; matches your request ‘I don't want horror, give me sci-fi’; 18 viewers with similar taste rated it 4.26/5 on average (weighted); 124 ratings overall, average 4.10/5. Plot/tag evidence: Sci-Fi: sci. 60 viewers rated both this and Alien (which you liked) 3.5/5 or higher.",
+          "evidence": {
+            "shared_genres": [
+              "Action",
+              "Sci-Fi",
+              "Thriller"
+            ],
+            "seed_matches": [],
+            "content_signal": "profile",
+            "content_similarity": 0.0271,
+            "query": "I don't want horror, give me sci-fi",
+            "query_terms": [
+              {
+                "concept": "Sci-Fi",
+                "terms": [
+                  "sci"
+                ]
+              }
+            ],
+            "tone_caveat": false,
+            "neighbors": {
+              "count": 18,
+              "weighted_mean": 4.263
+            },
+            "item_link": {
+              "source_movie_id": 1214,
+              "source_title": "Alien",
+              "support": 60
+            },
+            "rating_count": 124,
+            "average_rating": 4.101,
+            "low_confidence": false
+          }
+        },
+        {
+          "rank": 4,
+          "movie_id": 32,
+          "title": "Twelve Monkeys (a.k.a. 12 Monkeys)",
+          "year": 1995,
+          "genres": [
+            "Mystery",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "rank_score": 4.137,
+          "rating_count": 177,
+          "average_rating": 3.983,
+          "explanation": "Twelve Monkeys (a.k.a. 12 Monkeys): you rated other Mystery, Sci-Fi, Thriller films 4/5 or higher; its plot resembles films you rated highly; matches your request ‘I don't want horror, give me sci-fi’; 28 viewers with similar taste rated it 3.81/5 on average (weighted); 177 ratings overall, average 3.98/5. Plot/tag evidence: Sci-Fi: sci. 84 viewers rated both this and Star Wars: Episode IV - A New Hope (which you liked) 3.5/5 or higher.",
+          "evidence": {
+            "shared_genres": [
+              "Mystery",
+              "Sci-Fi",
+              "Thriller"
+            ],
+            "seed_matches": [],
+            "content_signal": "profile",
+            "content_similarity": 0.0282,
+            "query": "I don't want horror, give me sci-fi",
+            "query_terms": [
+              {
+                "concept": "Sci-Fi",
+                "terms": [
+                  "sci"
+                ]
+              }
+            ],
+            "tone_caveat": false,
+            "neighbors": {
+              "count": 28,
+              "weighted_mean": 3.811
+            },
+            "item_link": {
+              "source_movie_id": 260,
+              "source_title": "Star Wars: Episode IV - A New Hope",
+              "support": 84
+            },
+            "rating_count": 177,
+            "average_rating": 3.983,
+            "low_confidence": false
+          }
+        },
+        {
+          "rank": 5,
+          "movie_id": 68791,
+          "title": "Terminator Salvation",
+          "year": 2009,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "rank_score": 4.0291,
+          "rating_count": 18,
+          "average_rating": 3.25,
+          "explanation": "Terminator Salvation: you rated other Action, Adventure, Sci-Fi films 4/5 or higher; its plot resembles films you rated highly; matches your request ‘I don't want horror, give me sci-fi’; 3 viewers with similar taste rated it 3.29/5 on average (weighted); that is lukewarm, so it ranks mainly on co-liked films and plot similarity; 18 ratings overall, average 3.25/5. Plot/tag evidence: Sci-Fi: sci. 4 viewers rated both this and 9 (which you liked) 3.5/5 or higher. That link rests on few viewers.",
+          "evidence": {
+            "shared_genres": [
+              "Action",
+              "Adventure",
+              "Sci-Fi",
+              "Thriller"
+            ],
+            "seed_matches": [],
+            "content_signal": "profile",
+            "content_similarity": 0.1293,
+            "query": "I don't want horror, give me sci-fi",
+            "query_terms": [
+              {
+                "concept": "Sci-Fi",
+                "terms": [
+                  "sci"
+                ]
+              }
+            ],
+            "tone_caveat": false,
+            "neighbors": {
+              "count": 3,
+              "weighted_mean": 3.285
+            },
+            "item_link": {
+              "source_movie_id": 71057,
+              "source_title": "9",
+              "support": 4
+            },
+            "rating_count": 18,
+            "average_rating": 3.25,
+            "low_confidence": false
+          }
+        }
+      ],
+      "details": {
+        "seed_movie_id": null,
+        "query": "I don't want horror, give me sci-fi",
+        "excluded_genres": [
+          "Horror"
+        ],
+        "required_genres": [
+          "Sci-Fi"
+        ],
+        "min_year": null,
+        "max_year": null,
+        "discovery": false
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/api/v1/chat",
+      "body": {
+        "user_id": 15,
+        "message": "Why would I like that?"
+      }
+    },
+    "status": 200,
+    "response": {
+      "intent": "explain",
+      "language": "en",
+      "answer": "You might like Men in Black (a.k.a. MIB) because you rated other Action, Comedy, Sci-Fi films 4/5 or higher; its plot resembles films you rated highly; matches your request ‘I don't want horror, give me sci-fi’; 19 viewers with similar taste rated it 3.42/5 on average (weighted); that is lukewarm, so it ranks mainly on co-liked films and plot similarity; 165 ratings overall, average 3.49/5. Plot/tag evidence: Sci-Fi: sci. 64 viewers rated both this and Star Wars: Episode VI - Return of the Jedi (which you liked) 3.5/5 or higher.",
+      "headline": "",
+      "recommendations": [],
+      "details": {
+        "status": "recommended",
+        "movie": {
+          "movie_id": 1580,
+          "title": "Men in Black (a.k.a. MIB)",
+          "year": 1997,
+          "genres": [
+            "Action",
+            "Comedy",
+            "Sci-Fi"
+          ]
+        },
+        "evidence": {
+          "shared_genres": [
+            "Action",
+            "Comedy",
+            "Sci-Fi"
+          ],
+          "seed_matches": [],
+          "content_signal": "profile",
+          "content_similarity": 0.0304,
+          "query": "I don't want horror, give me sci-fi",
+          "query_terms": [
+            {
+              "concept": "Sci-Fi",
+              "terms": [
+                "sci"
+              ]
+            }
+          ],
+          "tone_caveat": false,
+          "neighbors": {
+            "count": 19,
+            "weighted_mean": 3.425
+          },
+          "item_link": {
+            "source_movie_id": 1210,
+            "source_title": "Star Wars: Episode VI - Return of the Jedi",
+            "support": 64
+          },
+          "rating_count": 165,
+          "average_rating": 3.488,
+          "low_confidence": false
+        }
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "GET",
+      "path": "/api/v1/users/1/movies/296/neighbor-opinion",
+      "body": null
+    },
+    "status": 200,
+    "response": {
+      "status": "ok",
+      "movie": {
+        "movie_id": 296,
+        "title": "Pulp Fiction",
+        "year": 1994,
+        "genres": [
+          "Comedy",
+          "Crime",
+          "Drama",
+          "Thriller"
+        ]
+      },
+      "neighbor_pool": 20,
+      "raters": [
+        {
+          "user_id": 178,
+          "similarity": 0.385,
+          "common_movies": 24,
+          "rating": 4.5
+        },
+        {
+          "user_id": 263,
+          "similarity": 0.383,
+          "common_movies": 26,
+          "rating": 3.0
+        },
+        {
+          "user_id": 226,
+          "similarity": 0.38,
+          "common_movies": 82,
+          "rating": 4.5
+        },
+        {
+          "user_id": 72,
+          "similarity": 0.37,
+          "common_movies": 18,
+          "rating": 4.5
+        },
+        {
+          "user_id": 414,
+          "similarity": 0.36,
+          "common_movies": 165,
+          "rating": 5.0
+        },
+        {
+          "user_id": 552,
+          "similarity": 0.359,
+          "common_movies": 25,
+          "rating": 4.0
+        },
+        {
+          "user_id": 201,
+          "similarity": 0.356,
+          "common_movies": 32,
+          "rating": 5.0
+        },
+        {
+          "user_id": 215,
+          "similarity": 0.349,
+          "common_movies": 25,
+          "rating": 3.5
+        },
+        {
+          "user_id": 445,
+          "similarity": 0.347,
+          "common_movies": 16,
+          "rating": 4.0
+        }
+      ],
+      "weighted_mean": 4.221,
+      "liked": 7,
+      "disliked": 0,
+      "overall": {
+        "count": 307,
+        "average": 4.197
+      },
+      "your_rating": 3.0,
+      "text": "Among your 20 closest taste neighbours, 9 rated Pulp Fiction: weighted average 4.22/5 (7 gave 4+, 0 gave 2.5 or less). Across all viewers: 307 ratings, average 4.20/5, so your taste group rates it about the same. Closest raters: user 178 (similarity 0.39, 24 films in common) gave 4.5/5, user 263 (similarity 0.38, 26 films in common) gave 3.0/5, user 226 (similarity 0.38, 82 films in common) gave 4.5/5. You rated it 3.0/5 yourself."
+    }
+  },
+  {
+    "request": {
+      "method": "GET",
+      "path": "/api/v1/users/1/blind-spots?limit=3",
+      "body": null
+    },
+    "status": 200,
+    "response": {
+      "user_id": 1,
+      "text": "Genres you have barely explored: Documentary (0 ratings); Film-Noir (1 rating, 5.0/5); Western (7 ratings, average 4.3/5). A low count means there is not enough data to infer a preference, not that you dislike the genre. To try one: Documentary → Roger & Me (1989); Film-Noir → Sin City (2005); Western → Unforgiven (1992).",
+      "blind_spots": [
+        {
+          "genre": "Documentary",
+          "count": 0,
+          "average": null,
+          "suggestion": {
+            "rank": 1,
+            "movie_id": 2064,
+            "title": "Roger & Me",
+            "year": 1989,
+            "genres": [
+              "Documentary"
+            ],
+            "rank_score": 4.7031,
+            "rating_count": 31,
+            "average_rating": 3.839,
+            "explanation": "Roger & Me: its plot resembles films you rated highly; 4 viewers with similar taste rated it 4.47/5 on average (weighted); 31 ratings overall, average 3.84/5. 14 viewers rated both this and The Wizard of Oz (which you liked) 3.5/5 or higher.",
+            "evidence": {
+              "shared_genres": [],
+              "seed_matches": [],
+              "content_signal": "profile",
+              "content_similarity": 0.0346,
+              "query": null,
+              "query_terms": [],
+              "tone_caveat": false,
+              "neighbors": {
+                "count": 4,
+                "weighted_mean": 4.472
+              },
+              "item_link": {
+                "source_movie_id": 919,
+                "source_title": "Wizard of Oz, The",
+                "support": 14
+              },
+              "rating_count": 31,
+              "average_rating": 3.839,
+              "low_confidence": false
+            }
+          }
+        },
+        {
+          "genre": "Film-Noir",
+          "count": 1,
+          "average": 5.0,
+          "suggestion": {
+            "rank": 1,
+            "movie_id": 32587,
+            "title": "Sin City",
+            "year": 2005,
+            "genres": [
+              "Action",
+              "Crime",
+              "Film-Noir",
+              "Mystery",
+              "Thriller"
+            ],
+            "rank_score": 4.7533,
+            "rating_count": 84,
+            "average_rating": 3.857,
+            "explanation": "Sin City: you rated other Action, Crime, Film-Noir films 4/5 or higher; its plot resembles films you rated highly; 9 viewers with similar taste rated it 4.16/5 on average (weighted); 84 ratings overall, average 3.86/5. 57 viewers rated both this and Fight Club (which you liked) 3.5/5 or higher.",
+            "evidence": {
+              "shared_genres": [
+                "Action",
+                "Crime",
+                "Film-Noir",
+                "Mystery",
+                "Thriller"
+              ],
+              "seed_matches": [],
+              "content_signal": "profile",
+              "content_similarity": 0.0465,
+              "query": null,
+              "query_terms": [],
+              "tone_caveat": false,
+              "neighbors": {
+                "count": 9,
+                "weighted_mean": 4.16
+              },
+              "item_link": {
+                "source_movie_id": 2959,
+                "source_title": "Fight Club",
+                "support": 57
+              },
+              "rating_count": 84,
+              "average_rating": 3.857,
+              "low_confidence": false
+            }
+          }
+        },
+        {
+          "genre": "Western",
+          "count": 7,
+          "average": 4.286,
+          "suggestion": {
+            "rank": 1,
+            "movie_id": 1266,
+            "title": "Unforgiven",
+            "year": 1992,
+            "genres": [
+              "Drama",
+              "Western"
+            ],
+            "rank_score": 4.4157,
+            "rating_count": 45,
+            "average_rating": 4.111,
+            "explanation": "Unforgiven: you rated other Drama, Western films 4/5 or higher; its plot resembles films you rated highly; 6 viewers with similar taste rated it 4.67/5 on average (weighted); 45 ratings overall, average 4.11/5. 28 viewers rated both this and Goodfellas (which you liked) 3.5/5 or higher.",
+            "evidence": {
+              "shared_genres": [
+                "Drama",
+                "Western"
+              ],
+              "seed_matches": [],
+              "content_signal": "profile",
+              "content_similarity": 0.046,
+              "query": null,
+              "query_terms": [],
+              "tone_caveat": false,
+              "neighbors": {
+                "count": 6,
+                "weighted_mean": 4.669
+              },
+              "item_link": {
+                "source_movie_id": 1213,
+                "source_title": "Goodfellas",
+                "support": 28
+              },
+              "rating_count": 45,
+              "average_rating": 4.111,
+              "low_confidence": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "method": "GET",
+      "path": "/api/v1/movies/search?q=dark%20psychological%20thriller&limit=3",
+      "body": null
+    },
+    "status": 200,
+    "response": {
+      "results": [
+        {
+          "movie_id": 4226,
+          "title": "Memento",
+          "year": 2000,
+          "genres": [
+            "Mystery",
+            "Thriller"
+          ],
+          "relevance": 1.0
+        },
+        {
+          "movie_id": 2959,
+          "title": "Fight Club",
+          "year": 1999,
+          "genres": [
+            "Action",
+            "Crime",
+            "Drama",
+            "Thriller"
+          ],
+          "relevance": 0.9647
+        },
+        {
+          "movie_id": 74458,
+          "title": "Shutter Island",
+          "year": 2010,
+          "genres": [
+            "Drama",
+            "Mystery",
+            "Thriller"
+          ],
+          "relevance": 0.8875
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "method": "GET",
+      "path": "/api/v1/users/9999",
+      "body": null
+    },
+    "status": 404,
+    "response": {
+      "error": {
+        "code": "not_found",
+        "message": "User 9999 is not present in the rating data."
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "GET",
+      "path": "/api/v1/users/15/recommendations?exclude_genres=Cartoon",
+      "body": null
+    },
+    "status": 400,
+    "response": {
+      "error": {
+        "code": "bad_request",
+        "message": "Unknown genre(s): Cartoon. Known: Action, Adventure, Animation, Children, Comedy, Crime, Documentary, Drama, Fantasy, Film-Noir, Horror, IMAX, Musical, Mystery, Romance, Sci-Fi, Thriller, War, Western."
+      }
+    }
+  }
+]
